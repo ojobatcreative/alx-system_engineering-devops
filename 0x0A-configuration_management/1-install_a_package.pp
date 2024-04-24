@@ -9,3 +9,4 @@ exec { 'install_flask':
   refreshonly => true,
   subscribe   => Package['python3-pip'],
 }
+
