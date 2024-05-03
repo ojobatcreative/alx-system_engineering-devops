@@ -41,11 +41,11 @@ frontend ojobat-frontend
         default_backend ojobat-backend
 
 frontend ojobat-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/ojobat.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/www.ojobat.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend ojobat-backend
 
 backend ojobat-backend
         balance roundrobin
-        server 151666-web-01 100.25.190.21:80 check
-        server 151666-web-02 54.160.77.90:80 check
+        server 427288-web-01 54.90.56.100:80 check
+        server 427288-web-02 34.232.76.210:80 check
