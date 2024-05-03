@@ -36,7 +36,7 @@ defaults
 
 frontend ojobat-tech-frontend
     bind *:80
-    default_backend clickviral-tech-backend
+    default_backend ojobat-tech-backend
 
 backend ojobat-tech-backend
     balance roundrobin
