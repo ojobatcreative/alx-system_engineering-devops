@@ -2,6 +2,13 @@
 # configures a server to listening on port 80 of all servers active IPv4 IPs
 
 sudo sed -i 's/\blisten 8080\b/listen 80/' /etc/nginx/sites-enabled/default
-sudo systemctl restart nginx
+
+if command -v systemctl &>/dev/null; then
+    sudo systemctl restart nginx
+else
+    # If systemctl is not available, use the service command
+    sudo service nginx restart
+fi
+
 sudo truncate -s 0 /run/nginx.pid >/dev/null 2>&1
 
